@@ -17,7 +17,7 @@ function App() {
           <form onSubmit={async (event) => {
             event.preventDefault();
             console.log("port:"+ process.env.REACT_APP_TEST_VAR)
-            const sape = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
+            const sape = await fetch(`https://tif-back-production.up.railway.app/?name=${queryName}`);
             console.log(process.env.REACT_APP_BACK_URI)
             console.log(sape)
             const new_pokemon = await sape.json();
