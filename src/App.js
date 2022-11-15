@@ -16,7 +16,7 @@ function App() {
         <div className='col-12 text-center'>
           <form onSubmit={async (event) => {
             event.preventDefault();
-            const sape = await fetch(`${process.env.BACK_rul}?name=${queryName}`);
+            const sape = await fetch(`${process.env.BACK_URL}?name=${queryName}`);
             const new_pokemon = await sape.json();
             console.log(new_pokemon)
             setPokemon(new_pokemon)
