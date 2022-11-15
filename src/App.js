@@ -16,9 +16,10 @@ function App() {
         <div className='col-12 text-center'>
           <form onSubmit={async (event) => {
             event.preventDefault();
-            const sape = await fetch(`${process.env.BACK_URI}?name=${queryName}`);
+            const sape = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
+            console.log(process.env.REACT_APP_BACK_URI)
+            console.log(sape)
             const new_pokemon = await sape.json();
-            console.log(new_pokemon)
             setPokemon(new_pokemon)
           }}>
             <input
