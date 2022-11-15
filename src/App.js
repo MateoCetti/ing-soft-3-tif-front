@@ -6,7 +6,7 @@ function App() {
   const [queryName, setQueryName] = useState("")
   const [pokemon, setPokemon] = useState(null)
   return (
-    <div className="Container text-white">
+    <div className="container h-100 text-white">
       <div className='row'>
         <div className='col-12 text-center'>
           <h1>Pokedex</h1>
@@ -16,6 +16,7 @@ function App() {
         <div className='col-12 text-center'>
           <form onSubmit={async (event) => {
             event.preventDefault();
+            console.log("port:"+ process.env.REACT_APP_TEST_VAR)
             const sape = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
             console.log(process.env.REACT_APP_BACK_URI)
             console.log(sape)
