@@ -5,8 +5,11 @@ FROM node:alpine AS BUILD_STAGE
 WORKDIR /app
 
 # install application dependencies
+ARG REACT_APP_BACK_URI
+
 COPY . ./
 RUN npm i
+
 
 # build
 RUN npm run build
