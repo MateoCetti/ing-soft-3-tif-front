@@ -16,11 +16,8 @@ function App() {
         <div className='col-12 text-center'>
           <form onSubmit={async (event) => {
             event.preventDefault();
-            console.log("port:"+ process.env.REACT_APP_TEST_VAR)
-            const sape = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
-            console.log(process.env.REACT_APP_BACK_URI)
-            console.log(sape)
-            const new_pokemon = await sape.json();
+            const res = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
+            const new_pokemon = await res.json();
             setPokemon(new_pokemon)
           }}>
             <input
@@ -29,13 +26,18 @@ function App() {
               placeholder="Charizard"
               onChange={(e) => setQueryName(e.target.value)}
             />
-            <button type="submit" className="btn btn-primary">Get pokemon types</button>
+            <button type="submit" className="btn btn-primary">Get pokemon</button>
           </form>
 
         </div>
       </div>
       {pokemon != null && (Object.keys(pokemon).length > 1 ?
-        <div className='text-white'>{pokemon.name}, {pokemon.types[0]}, {pokemon.types[1]}</div>
+        <div className='text-white'>
+          <div className="row">
+            <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.number}.png`} alt="" />
+          </div>
+          {pokemon.name}, {pokemon.types[0]}, {pokemon.types[1]}
+        </div>
         : <div className='text-white'>Error: {pokemon.error}</div>)}
     </div>
   );
