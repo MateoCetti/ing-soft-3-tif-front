@@ -16,7 +16,7 @@ function App() {
         <div className='col-12 text-center'>
           <form onSubmit={async (event) => {
             event.preventDefault();
-            const res = await fetch(`${process.env.REACT_APP_BACK_URI}?name=${queryName}`);
+            const res = await fetch(`${process.env.REACT_APP_BACK_URI}/pokemon/?name=${queryName}`);
             const new_pokemon = await res.json();
             setPokemon(new_pokemon)
           }}>
@@ -26,7 +26,7 @@ function App() {
               placeholder="Charizard"
               onChange={(e) => setQueryName(e.target.value)}
             />
-            <button type="submit" className="btn btn-primary">Get pokemon</button>
+            <button id="submitButton" type="submit" className="btn btn-primary">Get pokemon</button>
           </form>
 
         </div>
