@@ -22,6 +22,7 @@ function App() {
           }}>
             <input
               type="text"
+              id="pokemon-input"
               value={queryName}
               placeholder="Charizard"
               onChange={(e) => setQueryName(e.target.value)}
