@@ -9,7 +9,7 @@ function App() {
     <div className="container h-100 text-white">
       <div className='row'>
         <div className='col-12 text-center'>
-          <h1>Pokedex</h1>
+          <h1 id="main-header">Pokedex</h1>
         </div>
       </div>
       <div className='row'>
@@ -34,12 +34,17 @@ function App() {
       </div>
       {pokemon != null && (Object.keys(pokemon).length > 1 ?
         <div className='text-white'>
-          <div className="row">
+          <div id="pokemon-data" className="row">
             <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.number}.png`} alt="" />
           </div>
-          {pokemon.name}, {pokemon.types[0]}, {pokemon.types[1]}
+          <div id="pokemon-name">
+            {pokemon.name}  
+          </div>
+          <div id="pokemon-types">
+          {pokemon.types[0]}, {pokemon.types[1]}
+          </div>
         </div>
-        : <div className='text-white'>Error: {pokemon.error}</div>)}
+        : <div id="error-text" className='text-white'>Error: {pokemon.error}</div>)}
     </div>
   );
 }
