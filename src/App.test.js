@@ -6,15 +6,24 @@ import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import InputComponent from './inputComponent';
+import Navbar from './Navbar'
 
 test('renders title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/pokemon/i);
-  expect(linkElement).toBeInTheDocument();
+  const title = screen.getByText(/Pokedex/i);
+  expect(title).toBeInTheDocument();
 });
 
 test('renders button', ()=>{
-  const res = render(<App />);
-  const linkElement = res.getByText("Get pokemon");
-  expect(linkElement).toBeInTheDocument();
+  const res = render(<InputComponent />);
+  const text = res.getByText("Ingrese el nombre del pokemon");
+  expect(text).toBeInTheDocument();
+})
+
+test('Check navbar color', ()=>{
+  const res = render(<Navbar />);
+  const navbar = res.container.querySelector("#my-navbar");
+  expect(navbar).toBeInTheDocument();
+  expect(navbar).toHaveClass("bg-danger")
 })

@@ -35,7 +35,7 @@ export default function InputComponent({
               onChange={(e) => setQueryName(e.target.value)}
             />
             <button id="submitButton" type="submit" className="btn btn-dark">
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
             </button>
           </div>
         </div>
