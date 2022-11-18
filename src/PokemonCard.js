@@ -6,7 +6,7 @@ export default function PokemonCard({ pokemon }) {
   return (
     <>
       <div className="card text-white border rounded border-light border-2 my-3 bg-secondary">
-        <img className="img-fluid" src={image_url} alt="Pokemon image" />
+        <img className="img-fluid" src={image_url} alt="Pokemon ilustration" />
         <div className="card-body text-center bg-dark rounded-bottom border-top border-light">
           <div id="pokemon-name"><b>Nombre: </b>{pokemon.name}</div>
           <div id="pokemon-types">
