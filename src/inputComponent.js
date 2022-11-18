@@ -6,9 +6,10 @@ export default function InputComponent({
   setPokemon,
 }) {
   async function get_pokemon(event, name) {
+    const params = isNaN(name) ? `?name=${name}` : `?number=${name}` 
     event.preventDefault();
     const res = await fetch(
-      `${process.env.REACT_APP_BACK_URI}/pokemon/?name=${queryName}`
+      `${process.env.REACT_APP_BACK_URI}/pokemon/${params}`
     );
     console.log(res);
     const new_pokemon = await res.json();
@@ -19,7 +20,7 @@ export default function InputComponent({
       <div className="row">
         <div className="col-12 text-center text-light">
           <p>
-            <b>Ingrese el nombre del pokemon</b>
+            <b>Ingrese el nombre o numero del pokemon</b>
           </p>
         </div>
       </div>
