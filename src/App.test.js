@@ -17,7 +17,7 @@ test('renders title', () => {
 
 test('renders button', ()=>{
   const res = render(<InputComponent />);
-  const text = res.getByText("Ingrese el nombre del pokemon");
+  const text = res.getByText("Ingrese el nombre o numero del pokemon");
   expect(text).toBeInTheDocument();
 })
 
