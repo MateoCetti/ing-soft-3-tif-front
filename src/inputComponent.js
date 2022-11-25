@@ -9,7 +9,7 @@ export default function InputComponent({
     const params = isNaN(name) ? `?name=${name}` : `?number=${name}` 
     event.preventDefault();
     const res = await fetch(
-      `${process.env.REACT_APP_BACK_URI}/pokemon/${params}`
+      `${process.env.REACT_APP_BACK_URI}pokemon/${params}`
     );
     console.log(res);
     const new_pokemon = await res.json();
