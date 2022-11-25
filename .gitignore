@@ -1,6 +1,5 @@
 node_modules
 coverage
-build
 .env
 junit.xml
 .vscode
