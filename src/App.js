@@ -15,7 +15,7 @@ export default function App() {
       <Navbar />
       <div
         style={{ height: "100%" }}
-        className="container-fluid fill bg-light text-white pb-5 pt-2"
+        className="container-fluid fill bg-dark text-white pb-5 pt-2"
       >
         <div style={{ height: "100%" }} className="row justify-content-center">
           <div className="col-lg-6">
